@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portal Cliente - Fumichisa</title>
+    <style>
+        /* CSS NATIVO OPTIMIZADO PARA MÓVILES E iOS */
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        
+        body { background-color: #f3f4f6; color: #1f2937; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        
+        /* Contenedor que simula una App nativa */
+        .app-container { width: 100%; max-width: 480px; background-color: #ffffff; height: 100vh; max-height: 900px; display: flex; flex-direction: column; position: relative; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        @media (min-width: 481px) { .app-container { height: 90vh; border-radius: 20px; border: 4px solid #111827; } }
+
+        /* Vistas dinámicas */
+        .view { display: none; flex-direction: column; height: 100%; background: #f9fafb; animation: fadeIn 0.3s forwards; }
+        .view.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Encabezado Corporativo Fumichisa (Diseño Integrado) */
+        .header { background: #ffffff; padding: 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e5e7eb; position: relative; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 35px; height: 35px; background: #3A9D23; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; }
+        .logo-text { font-size: 20px; font-weight: 900; color: #111827; letter-spacing: -0.5px; }
+        .logo-sub { font-size: 10px; color: #3A9D23; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: -3px; }
+        
+        /* Botón de Perfil/Cerrar sesión */
+        .btn-profile { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #6b7280; cursor: pointer; }
+
+        /* Cuerpo desplazable */
+        .scroll-body { flex-grow: 1; overflow-y: auto; padding: 20px; -webkit-overflow-scrolling: touch; }
+
+        /* Tarjetas de Dashboard */
+        .dash-greeting { margin-bottom: 25px; }
+        .dash-greeting h2 { font-size: 24px; color: #111827; margin-bottom: 5px; }
+        .dash-greeting p { font-size: 14px; color: #6b7280; }
+
+        .status-card { background: linear-gradient(135deg, #3A9D23 0%, #2a7318 100%); border-radius: 16px; padding: 20px; color: white; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(58, 157, 35, 0.2); position: relative; overflow: hidden; }
+        .status-card::after { content: '🛡️'; position: absolute; right: -10px; bottom: -20px; font-size: 100px; opacity: 0.1; }
+        .status-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; opacity: 0.9; margin-bottom: 5px; }
+        .status-value { font-size: 28px; font-weight: 900; }
+
+        /* Botones de Acción Principal */
+        .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .btn-action { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px 15px; display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); -webkit-appearance: none; }
+        .btn-action:active { transform: scale(0.96); background: #f9fafb; }
+        .btn-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .bg-red-light { background: #fee2e2; color: #ef4444; }
+        .bg-blue-light { background: #e0f2fe; color: #0ea5e9; }
+        .btn-label { font-size: 13px; font-weight: 700; color: #374151; text-align: center; }
+
+        /* Pantalla de Reporte */
+        .form-title { font-size: 20px; font-weight: 800; margin-bottom: 5px; color: #111827; }
+        .form-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+        
+        .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #9ca3af; margin-bottom: 10px; letter-spacing: 0.5px; }
+        
+        .pest-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 25px; }
+        .btn-pest { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 15px 5px; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; -webkit-appearance: none; }
+        .btn-pest.selected { border-color: #3A9D23; background: #f0fdf4; }
+        .btn-pest span { font-size: 12px; font-weight: 600; color: #4b5563; }
+        .btn-pest.selected span { color: #15803d; }
+
+        .input-field { width: 100%; padding: 15px; border: 1px solid #d1d5db; border-radius: 12px; font-size: 15px; margin-bottom: 20px; outline: none; background: white; -webkit-appearance: none; }
+        .input-field:focus { border-color: #3A9D23; box-shadow: 0 0 0 3px rgba(58, 157, 35, 0.1); }
+
+        .btn-submit { width: 100%; background: #3A9D23; color: white; font-weight: 800; font-size: 16px; padding: 18px; border: none; border-radius: 12px; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 12px rgba(58, 157, 35, 0.2); -webkit-appearance: none; }
+        .btn-submit:active { transform: scale(0.98); }
+        .btn-cancel { width: 100%; background: transparent; color: #6b7280; font-weight: 700; font-size: 14px; padding: 15px; border: none; cursor: pointer; margin-top: 5px; }
+
+        /* Pantalla de Éxito / Mensajes */
+        .msg-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 20px; }
+        .msg-icon { font-size: 60px; margin-bottom: 20px; }
+        .msg-title { font-size: 22px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+        .msg-desc { font-size: 15px; color: #6b7280; line-height: 1.5; margin-bottom: 30px; }
+
+        /* Lista de Reportes */
+        .report-list { display: flex; flex-direction: column; gap: 12px; }
+        .report-item { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; display: flex; align-items: center; gap: 15px; }
+        .report-date { font-size: 11px; color: #9ca3af; font-weight: 600; margin-bottom: 3px; }
+        .report-pest { font-size: 15px; font-weight: 700; color: #1f2937; }
+        .report-area { font-size: 13px; color: #6b7280; }
+        .badge { background: #fef2f2; color: #dc2626; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; margin-left: auto; }
+
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- HEADER UNIVERSAL -->
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-icon">F</div>
+                <div>
+                    <div class="logo-text">FUMICHISA</div>
+                    <div class="logo-sub">Portal Cautivo Cliente</div>
+                </div>
+            </div>
+            <button class="btn-profile" onclick="showView('view-login')">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            </button>
+        </div>
+
+        <!-- 1. VISTA: LOGIN (Simulado para dar sensación de seguridad) -->
+        <div id="view-login" class="view active" style="justify-content: center; padding: 30px; background: white;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="width: 80px; height: 80px; background: #3A9D23; border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; margin-bottom: 15px; box-shadow: 0 10px 25px rgba(58, 157, 35, 0.3);">F</div>
+                <h1 style="font-size: 28px; font-weight: 900; color: #111827;">Bitácora Digital</h1>
+                <p style="color: #6b7280; font-size: 14px; margin-top: 5px;">Sistema de gestión exclusivo para clientes activos.</p>
+            </div>
+            
+            <input type="text" class="input-field" placeholder="ID de Sucursal (Ej. COCINA-01)" value="JURIQUILLA-MAIN">
+            <input type="password" class="input-field" placeholder="PIN de Acceso" value="1234">
+            
+            <button class="btn-submit" onclick="login()">Acceder a mi Portal</button>
+            <p style="text-align: center; font-size: 12px; color: #9ca3af; margin-top: 20px;">Servicio provisto por Fumichisa Control Estructural.</p>
+        </div>
+
+        <!-- 2. VISTA: DASHBOARD PRINCIPAL -->
+        <div id="view-dash" class="view">
+            <div class="scroll-body">
+                <div class="dash-greeting">
+                    <h2>Restaurante Juriquilla</h2>
+                    <p>Auditoría en tiempo real y reportes.</p>
+                </div>
+
+                <div class="status-card">
+                    <div class="status-title">Nivel de Protección Actual</div>
+                    <div class="status-value">ÓPTIMO</div>
+                    <div style="font-size: 12px; margin-top: 8px; opacity: 0.8;">Último servicio: Hace 12 días</div>
+                </div>
+
+                <div class="action-grid">
+                    <button class="btn-action" onclick="showView('view-report')">
+                        <div class="btn-icon bg-red-light">🐛</div>
+                        <div class="btn-label">Reportar<br>Avistamiento</div>
+                    </button>
+                    <button class="btn-action" onclick="showView('view-history')">
+                        <div class="btn-icon bg-blue-light">📋</div>
+                        <div class="btn-label">Ver Bitácora<br>de Sanidad</div>
+                    </button>
+                </div>
+
+                <div class="section-label" style="margin-top: 10px;">Avisos Fumichisa</div>
+                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; display: flex; gap: 15px; align-items: center;">
+                    <div style="font-size: 24px;">📅</div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 700; color: #1f2937;">Próxima Visita Técnica</div>
+                        <div style="font-size: 12px; color: #6b7280;">Programada para el próximo Jueves. Recuerde despejar tarjas.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. VISTA: REPORTAR AVISTAMIENTO -->
+        <div id="view-report" class="view">
+            <div class="scroll-body">
+                <h2 class="form-title">Registrar Avistamiento</h2>
+                <p class="form-subtitle">Ayude a nuestro técnico a localizar el foco de infestación.</p>
+
+                <div class="section-label">1. ¿Qué tipo de plaga vio?</div>
+                <div class="pest-selector" id="pest-grid">
+                    <button class="btn-pest" onclick="selectPest('Cucaracha', this)">
+                        <span style="font-size: 24px;">🪳</span>
+                        <span>Cucaracha</span>
+                    </button>
+                    <button class="btn-pest" onclick="selectPest('Roedor', this)">
+                        <span style="font-size: 24px;">🐀</span>
+                        <span>Roedor</span>
+                    </button>
+                    <button class="btn-pest" onclick="selectPest('Hormiga', this)">
+                        <span style="font-size: 24px;">🐜</span>
+                        <span>Hormiga</span>
+                    </button>
+                    <button class="btn-pest" onclick="selectPest('Mosca', this)">
+                        <span style="font-size: 24px;">🪰</span>
+                        <span>Mosca</span>
+                    </button>
+                    <button class="btn-pest" onclick="selectPest('Araña', this)">
+                        <span style="font-size: 24px;">🕷️</span>
+                        <span>Araña</span>
+                    </button>
+                    <button class="btn-pest" onclick="selectPest('Otro', this)">
+                        <span style="font-size: 24px;">❓</span>
+                        <span>Otro</span>
+                    </button>
+                </div>
+
+                <div class="section-label">2. ¿En qué área específica?</div>
+                <input type="text" id="area-input" class="input-field" placeholder="Ej. Debajo de la estufa, Baño de mujeres...">
+
+                <div class="section-label">3. ¿Cuántos ejemplares observó?</div>
+                <select id="severity-input" class="input-field" style="color: #4b5563;">
+                    <option value="1">Solo vi 1 o 2 (Aislado)</option>
+                    <option value="2">Vi varios (3 a 5)</option>
+                    <option value="3">Vi demasiados (Infestación activa)</option>
+                </select>
+
+                <button class="btn-submit" onclick="submitReport()">Enviar a Fumichisa</button>
+                <button class="btn-cancel" onclick="showView('view-dash')">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- 4. VISTA: HISTORIAL / BITÁCORA -->
+        <div id="view-history" class="view">
+            <div class="scroll-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 class="form-title" style="margin: 0;">Bitácora Oficial</h2>
+                    <button onclick="showView('view-dash')" style="background: none; border: none; color: #3A9D23; font-weight: 700; font-size: 14px; padding: 5px;">Volver</button>
+                </div>
+                
+                <p style="font-size: 12px; color: #6b7280; margin-bottom: 20px; line-height: 1.4;">Este registro es válido para auditorías internas de sanidad. Los datos son monitoreados por su técnico asignado.</p>
+
+                <div class="report-list" id="report-list-container">
+                    <!-- Los reportes se inyectan por JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. VISTA: MENSAJE DE ÉXITO -->
+        <div id="view-success" class="view">
+            <div class="msg-container">
+                <div class="msg-icon">✅</div>
+                <div class="msg-title">Reporte Recibido</div>
+                <div class="msg-desc">El avistamiento ha sido registrado en la base de datos de Fumichisa. Nuestro técnico revisará esta área específica en la próxima visita.</div>
+                <button class="btn-submit" onclick="showView('view-dash')">Volver al Inicio</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ESTADO DE LA APP (Simulación de Base de Datos para el cliente)
+        let selectedPest = "";
+        const reports = [
+            { date: "15 Mar 2026, 09:30 AM", pest: "Mosca", area: "Área de botes de basura", severity: 1 },
+            { date: "10 Mar 2026, 21:15 PM", pest: "Cucaracha", area: "Atrás del refrigerador #2", severity: 2 }
+        ];
+
+        // NAVEGACIÓN
+        function showView(viewId) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(viewId).classList.add('active');
+            
+            if(viewId === 'view-history') {
+                renderHistory();
+            }
+        }
+
+        // LOGIN FALSO
+        function login() {
+            // Aquí iría la validación real. Por ahora pasamos directo.
+            showView('view-dash');
+        }
+
+        // SELECCIONAR PLAGA EN EL FORMULARIO
+        function selectPest(pestName, btnElement) {
+            selectedPest = pestName;
+            // Quitar clase selected de todos
+            const buttons = document.getElementById('pest-grid').querySelectorAll('.btn-pest');
+            buttons.forEach(b => b.classList.remove('selected'));
+            // Añadir al clickeado
+            btnElement.classList.add('selected');
+        }
+
+        // ENVIAR REPORTE
+        function submitReport() {
+            const area = document.getElementById('area-input').value;
+            const severity = document.getElementById('severity-input').value;
+
+            if(!selectedPest || !area) {
+                alert("Por favor seleccione el tipo de plaga y escriba el área.");
+                return;
+            }
+
+            // Obtener fecha actual
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' }) + ", " + now.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
+
+            // Guardar en la "base de datos"
+            reports.unshift({
+                date: dateStr,
+                pest: selectedPest,
+                area: area,
+                severity: parseInt(severity)
+            });
+
+            // Limpiar formulario
+            document.getElementById('area-input').value = "";
+            document.getElementById('severity-input').value = "1";
+            selectedPest = "";
+            document.querySelectorAll('.btn-pest').forEach(b => b.classList.remove('selected'));
+
+            // Mostrar éxito
+            showView('view-success');
+        }
+
+        // RENDERIZAR HISTORIAL
+        function renderHistory() {
+            const container = document.getElementById('report-list-container');
+            container.innerHTML = "";
+
+            if(reports.length === 0) {
+                container.innerHTML = `<div style="text-align:center; padding: 30px; color:#9ca3af; font-size:14px;">No hay reportes registrados.</div>`;
+                return;
+            }
+
+            reports.forEach(r => {
+                let icon = "🐛";
+                if(r.pest === "Cucaracha") icon = "🪳";
+                if(r.pest === "Roedor") icon = "🐀";
+                if(r.pest === "Mosca") icon = "🪰";
+                if(r.pest === "Araña") icon = "🕷️";
+                if(r.pest === "Hormiga") icon = "🐜";
+
+                let severityText = r.severity > 1 ? `<div class="badge">Nivel ${r.severity}</div>` : '';
+
+                const html = `
+                    <div class="report-item">
+                        <div style="font-size: 28px;">${icon}</div>
+                        <div style="flex-grow: 1;">
+                            <div class="report-date">${r.date}</div>
+                            <div class="report-pest">${r.pest}</div>
+                            <div class="report-area">${r.area}</div>
+                        </div>
+                        ${severityText}
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+        }
+    </script>
+</body>
+</html>
+
+
