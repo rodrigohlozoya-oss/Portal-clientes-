@@ -21,25 +21,29 @@
         body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
 
-        /* NUEVO HEADER CORPORATIVO: Blanco, sólido y con sombra elegante */
+        /* HEADER MÁS GRANDE para enmarcar el logo imponente */
         header { 
             position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; 
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            padding: 25px 5%; /* Aumentamos padding para dar aire */
+            display: flex; justify-content: space-between; align-items: center; 
             background-color: var(--blanco);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Sombra un poco más fuerte */
         }
         
+        /* EL AJUSTE CLAVE: Logo mucho más grande */
         .logo-nav { 
-            max-height: 65px; width: auto; display: block; 
+            max-height: 110px; /* Casi duplicamos el tamaño anterior */
+            width: auto; 
+            display: block; 
         }
         
-        /* Texto del header ahora en gris oscuro para que resalte en el fondo blanco */
-        .nav-text { color: var(--texto); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+        .nav-text { color: var(--texto); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
 
-        /* Ajuste de padding para que el contenido baje un poco más y no lo tape el header */
+        /* Aumentamos el padding top del HERO para que no choque con el nuevo header grande */
         .hero { 
             position: relative; min-height: 100vh; color: var(--blanco);
-            background-color: var(--negro); display: flex; align-items: center; padding: 140px 5% 80px 5%;
+            background-color: var(--negro); display: flex; align-items: center; 
+            padding: 200px 5% 80px 5%; /* Bajamos el contenido */
         }
         
         .hero-bg {
@@ -111,7 +115,8 @@
 
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
-            .hero { padding: 160px 5% 100px 5%; }
+            .hero { padding: 220px 5% 100px 5%; } /* Ajuste mobile */
+            .logo-nav { max-height: 80px; } /* Un poco más pequeño en móvil para que no coma pantalla */
             .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
             .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 20px; }
             .about-section { flex-direction: column; padding: 80px 5%; }
