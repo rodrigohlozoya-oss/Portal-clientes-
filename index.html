@@ -21,7 +21,6 @@
         body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
 
-        /* CABECERA - LOGO TRANSPARENTE INTEGRADO */
         header { 
             position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; 
             padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; 
@@ -29,11 +28,10 @@
         }
         .logo-nav { 
             max-height: 65px; height: auto; display: block; 
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); /* Sombra para que resalte sin recuadro */
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
         }
         .nav-text { color: var(--blanco); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.9; }
 
-        /* HERO - PANTALLA PRINCIPAL */
         .hero { 
             position: relative; min-height: 100vh; color: var(--blanco);
             background-color: var(--negro); display: flex; align-items: center; padding: 120px 5% 80px 5%;
@@ -55,7 +53,6 @@
         .hero h1 span { color: var(--verde); }
         .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.85); margin-bottom: 40px; line-height: 1.6; font-weight: 300; }
         
-        /* BOTÓN WHATSAPP */
         .btn-primary {
             display: inline-flex; align-items: center; justify-content: center;
             background-color: var(--verde); color: var(--blanco); padding: 20px 40px; 
@@ -66,7 +63,6 @@
         .btn-primary i { margin-right: 15px; font-size: 1.3rem; }
         .btn-primary:hover { background-color: var(--negro); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
 
-        /* BARRA DE ESTADÍSTICAS */
         .stats-bar { 
             background-color: var(--negro); color: var(--blanco); display: flex; flex-wrap: wrap; 
             margin-top: -60px; position: relative; z-index: 5;
@@ -78,7 +74,6 @@
         .stat-number { display: block; font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--verde); margin-bottom: 10px; line-height: 1; }
         .stat-text { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #aaaaaa; font-weight: 500; }
 
-        /* SECCIÓN SOBRE NOSOTROS */
         .about-section { padding: 120px 5% 100px 5%; background-color: var(--blanco); display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
         .about-text { flex: 1; min-width: 350px; padding-left: 5%; }
         .about-text h2 { font-size: 2.5rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1px; }
@@ -90,7 +85,6 @@
         .about-image::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #eaf6ed; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); z-index: 1; }
         .about-image img { width: 100%; height: auto; display: block; position: relative; z-index: 2; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
 
-        /* SERVICIOS */
         .services { padding: 100px 5%; background-color: var(--gris-premium); position: relative; }
         .services-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1517420861198-d06987f1766a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; opacity: 0.04; z-index: 1; }
         .section-header { text-align: center; margin-bottom: 80px; position: relative; z-index: 2; }
@@ -104,13 +98,11 @@
         .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--negro); letter-spacing: 0.5px; }
         .service-card p { font-size: 0.95rem; color: var(--texto); line-height: 1.7; font-weight: 300; }
 
-        /* FOOTER */
         footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 50px 20px; font-size: 0.9rem; font-weight: 300; position: relative; }
         footer p { margin-bottom: 10px; letter-spacing: 0.5px; }
         footer strong { color: var(--blanco); font-weight: 500; }
         footer .location-list { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 15px; }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
             .hero { padding: 150px 5% 100px 5%; }
