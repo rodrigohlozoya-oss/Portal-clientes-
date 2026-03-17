@@ -18,89 +18,84 @@
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: var(--texto); background-color: #fff; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; color: var(--texto); background-color: #ffffff; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); }
 
-        /* HERO - PANTALLA DIVIDIDA PREMIUM */
-        .hero { display: flex; min-height: 100vh; }
+        .hero { display: flex; flex-wrap: wrap; min-height: 100vh; background-color: #ffffff; }
         
         .hero-content { 
             flex: 1; 
-            padding: 8% 8%; 
+            min-width: 300px;
+            padding: 10% 8%; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             background-color: #ffffff;
         }
         
-        /* EL TRUCO PARA INTEGRAR EL LOGO PERFECTAMENTE */
         .logo-main { 
             max-width: 250px; 
-            margin-bottom: 50px; 
-            mix-blend-mode: multiply; /* Esto borra el fondo blanco del logo */
-            filter: contrast(1.1); /* Realza los colores */
+            height: auto;
+            margin-bottom: 40px; 
+            mix-blend-mode: multiply; 
         }
 
-        .hero-content h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -2px; }
+        .hero-content h1 { font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1px; }
         .hero-content h1 span { color: var(--verde); }
-        .hero-content p { font-size: 1.2rem; color: #666; margin-bottom: 40px; line-height: 1.6; max-width: 90%; }
+        .hero-content p { font-size: 1.1rem; color: #666; margin-bottom: 40px; line-height: 1.6; max-width: 600px; }
         
-        /* IMAGEN DE IMPACTO AUTOMÁTICA (UNSPLASH) */
         .hero-image { 
             flex: 1; 
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; 
+            min-width: 300px;
+            min-height: 500px;
+            background-color: var(--negro);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'); 
+            background-size: cover;
+            background-position: center;
         }
 
-        /* BOTÓN DE ALTO IMPACTO */
         .btn-primary {
             display: inline-flex; align-items: center; justify-content: center;
-            background-color: var(--verde); color: #fff; padding: 20px 40px; 
+            background-color: var(--verde); color: #ffffff; padding: 20px 40px; 
             font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; 
             text-transform: uppercase; text-decoration: none; letter-spacing: 1px;
             transition: all 0.3s ease; width: fit-content; border-radius: 4px;
         }
         .btn-primary i { margin-right: 15px; font-size: 1.3rem; }
-        .btn-primary:hover { background-color: var(--negro); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .btn-primary:hover { background-color: var(--negro); color: #ffffff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        /* BARRA DE EXPANSIÓN Y EXPERIENCIA */
-        .stats-bar { background-color: var(--negro); color: #fff; display: grid; grid-template-columns: repeat(3, 1fr); }
-        .stat-box { padding: 50px 30px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
-        .stat-box:last-child { border: none; }
+        .stats-bar { background-color: var(--negro); color: #ffffff; display: flex; flex-wrap: wrap; }
+        .stat-box { flex: 1; min-width: 250px; padding: 50px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+        .stat-box:last-child { border-right: none; }
         .stat-number { display: block; font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--verde); margin-bottom: 10px; }
-        .stat-text { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #aaa; }
+        .stat-text { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #aaaaaa; }
 
-        /* SECCIÓN SOBRE NOSOTROS (EXPERIENCIA Y EQUIPO) */
-        .about-section { display: flex; padding: 100px 5%; background-color: var(--gris); gap: 50px; align-items: center; }
-        .about-text { flex: 1; padding-right: 5%; }
-        .about-text h2 { font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; }
-        .about-text p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; }
-        .about-image { flex: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .about-section { display: flex; flex-wrap: wrap; padding: 100px 5%; background-color: var(--gris); gap: 50px; align-items: center; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { font-size: 2.2rem; margin-bottom: 30px; text-transform: uppercase; }
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; color: #555; }
+        .about-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .about-image img { width: 100%; height: auto; display: block; }
 
-        /* PROTOCOLOS Y SERVICIOS */
-        .services { padding: 100px 5%; background-color: #fff; }
+        .services { padding: 100px 5%; background-color: #ffffff; }
         .section-header { text-align: center; margin-bottom: 70px; }
-        .section-header h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; }
-        .section-header .line { width: 80px; height: 5px; background-color: var(--verde); margin: 0 auto; }
+        .section-header h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 15px; }
+        .section-header .line { width: 80px; height: 4px; background-color: var(--verde); margin: 0 auto; }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
-        .service-card { border: 1px solid #eee; padding: 50px 40px; transition: all 0.3s; border-top: 5px solid transparent; }
-        .service-card:hover { border-top-color: var(--verde); box-shadow: 0 15px 30px rgba(0,0,0,0.05); transform: translateY(-10px); }
-        .service-icon { font-size: 2.5rem; color: var(--verde); margin-bottom: 30px; }
-        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; text-transform: uppercase; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .service-card { border: 1px solid #eeeeee; padding: 40px 30px; transition: all 0.3s; border-top: 4px solid transparent; background-color: #ffffff; }
+        .service-card:hover { border-top-color: var(--verde); box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
+        .service-icon { font-size: 2.5rem; color: var(--verde); margin-bottom: 25px; display: block; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--negro); }
 
-        footer { background-color: var(--negro); color: #fff; text-align: center; padding: 40px; font-size: 0.9rem; }
+        footer { background-color: var(--negro); color: #ffffff; text-align: center; padding: 40px 20px; font-size: 0.9rem; }
+        footer p { margin-bottom: 10px; color: #cccccc; }
+        footer strong { color: #ffffff; }
 
-        /* RESPONSIVE CELULARES */
-        @media (max-width: 1024px) {
-            .hero { flex-direction: column; }
-            .hero-image { min-height: 400px; }
-            .hero-content { padding: 15% 8%; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .stats-bar { grid-template-columns: 1fr; }
-            .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 40px 20px; }
-            .about-section { flex-direction: column; }
-            .about-text { padding-right: 0; }
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content { padding: 15% 5%; }
+            .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
         }
     </style>
 </head>
@@ -131,7 +126,7 @@
         </div>
         <div class="stat-box">
             <span class="stat-number">100%</span>
-            <span class="stat-text">Garantía de Erradicación</span>
+            <span class="stat-text">Garantía de Saneamiento</span>
         </div>
     </section>
 
@@ -142,7 +137,7 @@
             <p>Nuestro personal cuenta con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura. Su seguridad sanitaria no es un gasto, es una inversión.</p>
         </div>
         <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tecnología Aplicada">
+            <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tecnología Aplicada">
         </div>
     </section>
 
@@ -177,7 +172,7 @@
 
     <footer>
         <p><strong>FUMICHISA CORPORATIVO</strong> | Bioseguridad e Higiene Estructural.</p>
-        <p>Querétaro • Valle de Bravo • Chihuahua | © 2026</p>
+        <p>Querétaro • Valle de Bravo • Chihuahua | © 2026 Todos los derechos reservados.</p>
     </footer>
 
 </body>
