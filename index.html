@@ -3,119 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fumichisa | Expertos en Control y Erradicación de Plagas</title>
+    <title>Fumichisa | Bioseguridad y Control Estructural</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --verde: #2A8C3F;
-            --verde-oscuro: #1e662d;
-            --negro: #1A1A1A;
-            --gris-claro: #f8fafc;
-            --texto: #4a5568;
-            --blanco: #ffffff;
+            --verde-oscuro: #1A5C27;
+            --negro: #111111;
+            --gris: #F8F9FA;
+            --texto: #4A5568;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); line-height: 1.6; overflow-x: hidden; font-weight: 300; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
-        
-        /* Cabecera / Navegación - Blanco puro para integrar logo */
-        header { background-color: var(--blanco); padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 0 rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .logo-nav { max-height: 50px; display: block; }
-        .nav-contact { font-weight: 500; color: var(--verde); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Inter', sans-serif; color: var(--texto); background-color: #fff; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); }
 
-        /* Sección Principal (Hero) - Blanco puro e Integración */
-        .hero { background-color: var(--blanco); padding: 100px 5%; text-align: center; border-bottom: 1px solid #eee; }
-        .hero-logo-container { margin-bottom: 40px; display: inline-block; padding: 20px; }
-        .hero-logo { max-width: 320px; height: auto; display: block; margin: 0 auto; }
+        /* HERO - PANTALLA DIVIDIDA PREMIUM */
+        .hero { display: flex; min-height: 100vh; }
         
-        .hero h1 { font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
-        .hero h1 span { color: var(--verde); }
-        .hero p { font-size: 19px; max-width: 750px; margin: 0 auto 50px auto; color: #718096; font-weight: 300; }
-        .hero p strong { color: var(--negro); font-weight: 500; }
-        
-        /* Botones Profesionales */
-        .btn { display: inline-block; background-color: var(--verde); color: var(--blanco); padding: 20px 45px; border-radius: 5px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; letter-spacing: 1px; }
-        .btn:hover { background-color: var(--negro); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-        .btn i { margin-right: 10px; font-size: 18px; vertical-align: middle; }
-
-        /* Barra de Confianza - Negro Corporativo */
-        .trust-bar { background-color: var(--negro); color: var(--blanco); padding: 25px 5%; display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; text-align: center; }
-        .trust-item { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Montserrat', sans-serif; }
-        .trust-item strong { color: var(--verde); font-size: 20px; font-weight: 900; }
-        .trust-item i { color: var(--verde); font-size: 18px; }
-
-        /* Sección de Servicios - Fondo gris sutil */
-        .services { padding: 100px 5%; background-color: var(--gris-claro); text-align: center; }
-        .services h2 { font-size: 36px; margin-bottom: 60px; text-transform: uppercase; letter-spacing: -1px; }
-        .services h2::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--verde); margin: 15px auto 0 auto; border-radius: 2px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .card { background: var(--blanco); padding: 50px 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: all 0.3s ease; border: 1px solid #e2e8f0; text-align: left; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--verde); }
-        
-        /* Estilo para los Nuevos Iconos Profesionales */
-        .card-icon-container { width: 70px; height: 70px; background-color: #eaf6ed; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: var(--verde); font-size: 32px; }
-        
-        .card h3 { font-size: 19px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--negro); }
-        .card p { font-size: 15px; color: var(--texto); font-weight: 300; line-height: 1.7; }
-
-        /* Footer */
-        footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 50px 5%; font-size: 13px; font-weight: 300; }
-        footer strong { color: var(--blanco); font-weight: 500; }
-        footer p { margin-bottom: 10px; letter-spacing: 0.5px; }
-        
-        /* Adaptación a Celulares */
-        @media (max-width: 768px) {
-            .header { padding: 10px 20px; }
-            .logo-nav { max-height: 40px; }
-            .hero { padding: 70px 20px; }
-            .hero h1 { font-size: 32px; letter-spacing: -1px; }
-            .hero-logo { max-width: 240px; }
-            .hero p { font-size: 17px; }
-            .btn { width: 100%; padding: 18px 20px; font-size: 14px; }
-            .trust-bar { flex-direction: column; gap: 20px; padding: 30px 20px; }
-            .trust-item { font-size: 12px; justify-content: center; }
-            .services { padding: 70px 20px; }
-            .services h2 { font-size: 28px; }
+        .hero-content { 
+            flex: 1; 
+            padding: 8% 8%; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            background-color: #ffffff;
         }
-    </style>
-</head>
-<body>
-
-    <header>
-        <img src="Logo%20Fumichisa%202026.png" alt="Fumichisa Corporativo" class="logo-nav">
-        <div class="nav-contact">Bioseguridad Estructural</div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-logo-container">
-            <img src="Logo%20Fumichisa%202026.png" alt="Fumichisa Control de Plagas" class="hero-logo">
-        </div>
-        <h1>Protección y <span>Erradicación</span> Profesional</h1>
-        <p>Desarrollamos protocolos avanzados de bioseguridad para blindar tu patrimonio, familia y empresa. Química de última generación con cobertura operativa en <strong>Querétaro, Valle de Bravo y Chihuahua</strong>.</p>
         
-        <a href="https://wa.me/526142126037?text=Hola%20Fumichisa,%20vengo%20de%20la%20página%20web.%20Me%20gustaría%20solicitar%20un%20diagnóstico%20de%20erradicación." class="btn">
-            <i class="fab fa-whatsapp"></i> Solicitar Diagnóstico Inmediato
-        </a>
-    </section>
+        /* EL TRUCO PARA INTEGRAR EL LOGO PERFECTAMENTE */
+        .logo-main { 
+            max-width: 250px; 
+            margin-bottom: 50px; 
+            mix-blend-mode: multiply; /* Esto borra el fondo blanco del logo */
+            filter: contrast(1.1); /* Realza los colores */
+        }
 
-    <div class="trust-bar">
-        <div class="trust-item"><i class="fas fa-history"></i> <strong>15+</strong> Años de Experiencia</div>
-        <div class="trust-item"><i class="fas fa-shield-alt"></i> <strong>100%</strong> Garantía de Saneamiento</div>
-        <div class="trust-item"><i class="fas fa-map-marker-alt"></i> QRO • VALLE • CHIH</div>
-    </div>
-
-    <section class="services">
-        <h2>Protocolos de Alta Especialidad</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <div class="card-icon-container">
-                    <i class="fas fa-bug"></i> </div>
-                <h3>Cucaracha Alemana</h3>
-                <p>Intervención de grado clínico para cocinas comerciales y residenciales.
+        .hero-content h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -2px; }
+        .hero-content h1 span { color: var(--verde); }
+        .hero-content p { font-size: 1.2rem; color:
