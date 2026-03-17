@@ -21,31 +21,25 @@
         body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
 
+        /* NUEVO HEADER CORPORATIVO: Blanco, sólido y con sombra elegante */
         header { 
             position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; 
-            padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; 
-        }
-        
-        /* LA MAGIA: Cápsula de cristal con márgenes suaves para integrar el logo */
-        .logo-capsule {
-            background: rgba(255, 255, 255, 0.92);
-            padding: 12px 28px;
-            border-radius: 50px; /* Bordes perfectamente curvos y suaves */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            display: inline-flex;
-            align-items: center;
-            backdrop-filter: blur(5px);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            background-color: var(--blanco);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         
         .logo-nav { 
-            max-height: 55px; width: auto; display: block; 
+            max-height: 65px; width: auto; display: block; 
         }
         
-        .nav-text { color: var(--blanco); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.9; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        /* Texto del header ahora en gris oscuro para que resalte en el fondo blanco */
+        .nav-text { color: var(--texto); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
 
+        /* Ajuste de padding para que el contenido baje un poco más y no lo tape el header */
         .hero { 
             position: relative; min-height: 100vh; color: var(--blanco);
-            background-color: var(--negro); display: flex; align-items: center; padding: 120px 5% 80px 5%;
+            background-color: var(--negro); display: flex; align-items: center; padding: 140px 5% 80px 5%;
         }
         
         .hero-bg {
@@ -117,7 +111,7 @@
 
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
-            .hero { padding: 150px 5% 100px 5%; }
+            .hero { padding: 160px 5% 100px 5%; }
             .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
             .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 20px; }
             .about-section { flex-direction: column; padding: 80px 5%; }
@@ -129,9 +123,7 @@
 <body>
 
     <header>
-        <div class="logo-capsule">
-            <img src="logo_hd_final.png" alt="Fumichisa Corporativo" class="logo-nav">
-        </div>
+        <img src="logo_hd_final.png" alt="Fumichisa Corporativo" class="logo-nav">
         <div class="nav-text">Bioseguridad Estructural</div>
     </header>
 
