@@ -43,4 +43,142 @@
 
         .hero-content h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -2px; }
         .hero-content h1 span { color: var(--verde); }
-        .hero-content p { font-size: 1.2rem; color:
+        .hero-content p { font-size: 1.2rem; color: #666; margin-bottom: 40px; line-height: 1.6; max-width: 90%; }
+        
+        /* IMAGEN DE IMPACTO AUTOMÁTICA (UNSPLASH) */
+        .hero-image { 
+            flex: 1; 
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; 
+        }
+
+        /* BOTÓN DE ALTO IMPACTO */
+        .btn-primary {
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: var(--verde); color: #fff; padding: 20px 40px; 
+            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; 
+            text-transform: uppercase; text-decoration: none; letter-spacing: 1px;
+            transition: all 0.3s ease; width: fit-content; border-radius: 4px;
+        }
+        .btn-primary i { margin-right: 15px; font-size: 1.3rem; }
+        .btn-primary:hover { background-color: var(--negro); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        /* BARRA DE EXPANSIÓN Y EXPERIENCIA */
+        .stats-bar { background-color: var(--negro); color: #fff; display: grid; grid-template-columns: repeat(3, 1fr); }
+        .stat-box { padding: 50px 30px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+        .stat-box:last-child { border: none; }
+        .stat-number { display: block; font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--verde); margin-bottom: 10px; }
+        .stat-text { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #aaa; }
+
+        /* SECCIÓN SOBRE NOSOTROS (EXPERIENCIA Y EQUIPO) */
+        .about-section { display: flex; padding: 100px 5%; background-color: var(--gris); gap: 50px; align-items: center; }
+        .about-text { flex: 1; padding-right: 5%; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; }
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; }
+        .about-image { flex: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .about-image img { width: 100%; height: auto; display: block; }
+
+        /* PROTOCOLOS Y SERVICIOS */
+        .services { padding: 100px 5%; background-color: #fff; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; }
+        .section-header .line { width: 80px; height: 5px; background-color: var(--verde); margin: 0 auto; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .service-card { border: 1px solid #eee; padding: 50px 40px; transition: all 0.3s; border-top: 5px solid transparent; }
+        .service-card:hover { border-top-color: var(--verde); box-shadow: 0 15px 30px rgba(0,0,0,0.05); transform: translateY(-10px); }
+        .service-icon { font-size: 2.5rem; color: var(--verde); margin-bottom: 30px; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; text-transform: uppercase; }
+
+        footer { background-color: var(--negro); color: #fff; text-align: center; padding: 40px; font-size: 0.9rem; }
+
+        /* RESPONSIVE CELULARES */
+        @media (max-width: 1024px) {
+            .hero { flex-direction: column; }
+            .hero-image { min-height: 400px; }
+            .hero-content { padding: 15% 8%; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .stats-bar { grid-template-columns: 1fr; }
+            .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 40px 20px; }
+            .about-section { flex-direction: column; }
+            .about-text { padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="Logo%20Fumichisa%202026.png" alt="Fumichisa" class="logo-main">
+            
+            <h1>Blindaje Estructural y <span>Bioseguridad</span></h1>
+            <p>15 años liderando la industria. Protegemos operaciones comerciales, residenciales e industriales con química de última generación y personal altamente técnico.</p>
+            
+            <a href="https://wa.me/526142126037?text=Hola,%20busco%20soluciones%20de%20erradicación%20profesional." class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Contacto Operativo
+            </a>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stat-box">
+            <span class="stat-number">15</span>
+            <span class="stat-text">Años de Autoridad</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">3</span>
+            <span class="stat-text">Bases Operativas (QRO / CHIH / VALLE)</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-text">Garantía de Erradicación</span>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Tecnología y Equipo Técnico</h2>
+            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Diseñamos protocolos de extracción y blindaje basados en el comportamiento biológico de cada patógeno.</p>
+            <p>Nuestro personal cuenta con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura. Su seguridad sanitaria no es un gasto, es una inversión.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tecnología Aplicada">
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-header">
+            <h2>Protocolos de Alta Gama</h2>
+            <div class="line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-shield-virus service-icon"></i>
+                <h3>Cucaracha Alemana</h3>
+                <p>Uso exclusivo de geles atrayentes premium y Reguladores de Crecimiento (IGR) para esterilizar a la colonia y romper el ciclo en áreas de proceso de alimentos.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-spider service-icon"></i>
+                <h3>Cordón Sanitario Rastreros</h3>
+                <p>Barreras químicas residuales en exteriores e interiores para blindar naves industriales y residencias contra alacranes, viudas negras y ciempiés.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bed service-icon"></i>
+                <h3>Extracción de Chinches</h3>
+                <p>Tratamiento de choque mecánico y químico diseñado para erradicar infestaciones severas en colchones, bases y estructuras, eliminando adultos y huevecillos.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-industry service-icon"></i>
+                <h3>Control de Roedores</h3>
+                <p>Instalación de estaciones de cebado perimetral con anclaje de seguridad, mapeo de madrigueras y consultoría en exclusión física de instalaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>FUMICHISA CORPORATIVO</strong> | Bioseguridad e Higiene Estructural.</p>
+        <p>Querétaro • Valle de Bravo • Chihuahua | © 2026</p>
+    </footer>
+
+</body>
+</html>
