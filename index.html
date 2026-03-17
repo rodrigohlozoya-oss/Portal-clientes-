@@ -3,35 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fumichisa | Control de Plagas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Fumichisa | Control Estructural de Plagas</title>
+    <style>
+        :root {
+            --verde: #2A8C3F;
+            --negro: #1A1A1A;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            border-top: 8px solid var(--verde);
+        }
+        img {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: var(--negro);
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .btn-ws {
+            background-color: var(--verde);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-ws:hover {
+            background-color: var(--negro);
+        }
+        .locations {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 flex items-center justify-center min-h-screen font-sans antialiased">
-    
-    <div class="max-w-2xl mx-auto text-center px-6">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mb-4 tracking-tight">Fumichisa</h1>
-        <h2 class="text-xl md:text-2xl text-blue-600 mb-8 font-light">Expertos en Control de Plagas</h2>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Fumichisa Logo">
+        <h1>Expertos en Erradicación</h1>
+        <p>Estamos actualizando nuestro portal para ofrecerte protocolos de blindaje estructural de última generación. Nuestra prioridad es tu seguridad sanitaria.</p>
         
-        <p class="text-lg text-slate-500 mb-10 leading-relaxed max-w-lg mx-auto">
-            Estamos preparando nuestro nuevo espacio digital. Muy pronto podrás conocer a detalle todos nuestros servicios de fumigación y manejo integral de plagas.
-        </p>
+        <a href="https://wa.me/5214421234567" class="btn-ws">SOLICITAR COTIZACIÓN POR WHATSAPP</a>
         
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-10">
-            <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Servicio disponible en:</h3>
-            <p class="text-slate-700 font-medium">
-                Querétaro <span class="mx-2 text-slate-300">|</span> Valle de Bravo <span class="mx-2 text-slate-300">|</span> Chihuahua
-            </p>
+        <div class="locations">
+            Querétaro | Valle de Bravo | Chihuahua
         </div>
-        
-        <p class="text-sm text-slate-400 italic">Sitio en construcción.</p>
     </div>
-
-    <a href="https://wa.me/526141666103?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización%20para%20Fumichisa" 
-       target="_blank" 
-       class="fixed bottom-8 right-8 bg-[#25d366] text-white p-5 rounded-full shadow-2xl hover:bg-[#128c7e] transition-all flex items-center justify-center z-50 hover:scale-110">
-        <i class="fab fa-whatsapp text-4xl"></i>
-    </a>
-
 </body>
 </html>
