@@ -29,13 +29,7 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
         }
         
-        /* LOGO AMPLIADO A 120PX */
-        .logo-nav { 
-            max-height: 120px; 
-            width: auto; 
-            display: block; 
-            transition: all 0.4s ease;
-        }
+        .logo-nav { max-height: 120px; width: auto; display: block; transition: all 0.4s ease; }
         .logo-nav:hover { transform: scale(1.02); }
         
         .nav-text { 
@@ -51,7 +45,6 @@
         
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            /* Filtro blanco semitransparente sobre la imagen de fondo para que el texto negro se lea perfecto */
             background-image: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; background-attachment: fixed;
             z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
@@ -113,6 +106,42 @@
         .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--negro); letter-spacing: 0.5px; }
         .service-card p { font-size: 0.95rem; color: var(--texto); line-height: 1.7; font-weight: 400; }
 
+        /* NUEVA SECCIÓN: CARRUSEL DE CLIENTES Y CERTIFICACIONES */
+        .clients-section { padding: 80px 5%; background-color: var(--blanco); text-align: center; border-top: 1px solid #edf2f7; }
+        .clients-section h2 { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--negro); }
+        
+        .slider { 
+            background: white; box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05); height: 100px; 
+            margin: auto; overflow: hidden; position: relative; width: 100%; max-width: 1200px; border-radius: 8px;
+        }
+        .slider::before, .slider::after { 
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); 
+            content: ""; height: 100px; position: absolute; width: 100px; z-index: 2; 
+        }
+        .slider::after { right: 0; top: 0; transform: rotateZ(180deg); }
+        .slider::before { left: 0; top: 0; }
+        
+        .slide-track { 
+            animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); 
+        }
+        .slide { 
+            height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; 
+            padding: 20px; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; 
+        }
+        .slide:hover { filter: grayscale(0%); opacity: 1; color: var(--verde); }
+        
+        .slide-text { 
+            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; 
+            text-transform: uppercase; display: flex; align-items: center; gap: 10px;
+        }
+        .slide-text i { font-size: 1.5rem; color: var(--verde); }
+        
+        /* Animación del Carrusel */
+        @keyframes scroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(calc(-250px * 5)); } 
+        }
+
         /* FOOTER OSCURO */
         footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 50px 20px; font-size: 0.9rem; font-weight: 300; position: relative; }
         footer p { margin-bottom: 10px; letter-spacing: 0.5px; }
@@ -122,7 +151,7 @@
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
             .hero { padding: 200px 5% 100px 5%; }
-            .logo-nav { max-height: 90px; } /* En celulares se hace un poco más chico para no tapar todo */
+            .logo-nav { max-height: 90px; } 
             .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
             .stat-box { border-right: none; border-bottom: 1px solid #edf2f7; padding: 30px 20px; }
             .about-section { flex-direction: column; padding: 80px 5%; }
@@ -134,7 +163,7 @@
 <body>
 
     <header>
-        <img src="logo_hormiga.png?v=8" alt="Fumichisa Corporativo" class="logo-nav">
+        <img src="logo_hormiga.png?v=9" alt="Fumichisa Corporativo" class="logo-nav">
         <div class="nav-text">Bioseguridad Estructural</div>
     </header>
 
@@ -208,6 +237,25 @@
                 <p>Instalación estratégica de estaciones de cebado perimetral con anclaje de seguridad, mapeo de actividad, y consultoría técnica en exclusión física de instalaciones.</p>
             </div>
             
+        </div>
+    </section>
+
+    <section class="clients-section">
+        <h2>Sectores Atendidos y Certificaciones</h2>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide"><div class="slide-text"><i class="fas fa-industry"></i> Industria</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-utensils"></i> Sector Alimenticio</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-hotel"></i> Hotelería</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-certificate"></i> Distintivo H</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-shield-alt"></i> Cumplimiento Normativo</div></div>
+                
+                <div class="slide"><div class="slide-text"><i class="fas fa-industry"></i> Industria</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-utensils"></i> Sector Alimenticio</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-hotel"></i> Hotelería</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-certificate"></i> Distintivo H</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-shield-alt"></i> Cumplimiento Normativo</div></div>
+            </div>
         </div>
     </section>
 
