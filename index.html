@@ -27,19 +27,21 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
         }
         
-        /* Estilo Cohesivo para el Logo */
+        /* Estilo Cohesivo para el Logo en Placa Blanca */
         .logo-nav { 
             max-height: 85px; 
             width: auto; 
             display: block; 
-            padding: 5px; 
-            filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.15)); 
+            padding: 8px 18px; /* Márgenes suaves y equilibrados */
+            background-color: rgba(255, 255, 255, 0.95); /* Placa blanca premium para resaltar texto negro */
+            border-radius: 6px; /* Bordes sutiles */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
             transition: all 0.4s ease;
         }
         
         .logo-nav:hover {
             transform: translateY(-2px);
-            filter: drop-shadow(0 4px 20px rgba(42, 140, 63, 0.4));
+            box-shadow: 0 6px 20px rgba(42, 140, 63, 0.4);
         }
         
         .nav-text { 
@@ -140,7 +142,7 @@
 <body>
 
     <header>
-        <img src="logo_hormiga.png?v=4" alt="Fumichisa Corporativo" class="logo-nav">
+        <img src="logo_hormiga.png?v=5" alt="Fumichisa Corporativo" class="logo-nav">
         <div class="nav-text">Bioseguridad Estructural</div>
     </header>
 
@@ -164,64 +166,3 @@
         <div class="stat-box">
             <span class="stat-number">3</span>
             <span class="stat-text">Bases Operativas (QRO / CHIH / VALLE)</span>
-        </div>
-        <div class="stat-box">
-            <span class="stat-number">100%</span>
-            <span class="stat-text">Garantía de Saneamiento y Erradicación</span>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="about-text">
-            <h2>Tecnología, Equipo y Autoridad</h2>
-            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Desarrollamos protocolos de extracción y blindaje basados en el comportamiento biológico de cada patógeno. Su seguridad sanitaria no es un gasto, es una inversión en continuidad operativa.</p>
-            <p>Nuestro personal cuenta con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura.</p>
-        </div>
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tecnología Aplicada Fumichisa">
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="services-bg"></div>
-        <div class="section-header">
-            <h2>Protocolos de Alta Gama</h2>
-            <div class="line"></div>
-        </div>
-        <div class="services-grid">
-            
-            <div class="service-card">
-                <i class="fas fa-shield-virus service-icon"></i>
-                <h3>Cucaracha Alemana</h3>
-                <p>Uso exclusivo de geles atrayentes premium y Reguladores de Crecimiento (IGR) para esterilizar a la colonia y romper el ciclo biológico en áreas de proceso de alimentos.</p>
-            </div>
-            
-            <div class="service-card">
-                <i class="fas fa-spider service-icon"></i>
-                <h3>Barrera Perimetral</h3>
-                <p>Barreras químicas residuales en exteriores e interiores para blindar naves industriales y residencias contra alacranes, viudas negras y ciempiés.</p>
-            </div>
-            
-            <div class="service-card">
-                <i class="fas fa-bed service-icon"></i>
-                <h3>Extracción de Chinches</h3>
-                <p>Tratamiento de choque mecánico y químico diseñado para erradicar infestaciones severas, eliminando adultos, ninfas y huevecillos con garantía total.</p>
-            </div>
-            
-            <div class="service-card">
-                <i class="fas fa-vector-square service-icon"></i>
-                <h3>Control de Roedores</h3>
-                <p>Instalación estratégica de estaciones de cebado perimetral con anclaje de seguridad, mapeo de actividad, y consultoría técnica en exclusión física de instalaciones.</p>
-            </div>
-            
-        </div>
-    </section>
-
-    <footer>
-        <p><strong>FUMICHISA CORPORATIVO</strong> | Bioseguridad e Higiene Estructural.</p>
-        <div class="location-list">Querétaro • Valle de Bravo • Chihuahua</div>
-        <p>© 2026 Todos los derechos reservados.</p>
-    </footer>
-
-</body>
-</html>
