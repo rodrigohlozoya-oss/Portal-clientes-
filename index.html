@@ -27,21 +27,20 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
         }
         
-        /* Estilo Cohesivo para el Logo Original */
+        /* Estilo Cohesivo para el Logo Transparente */
         .logo-nav { 
             max-height: 85px; 
             width: auto; 
             display: block; 
-            padding: 3px; 
-            background-color: var(--blanco); /* Fondo blanco para enmarcar el logo limpio */
-            border-radius: 6px; /* Esquinas ligeramente redondeadas para un look de placa */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+            padding: 5px; 
+            /* Se quitó el fondo blanco para que flote sobre el negro */
+            filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.15)); /* Resplandor sutil para que las letras negras no se pierdan */
             transition: all 0.4s ease;
         }
         
         .logo-nav:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(42, 140, 63, 0.4);
+            filter: drop-shadow(0 4px 20px rgba(42, 140, 63, 0.4));
         }
         
         .nav-text { 
@@ -142,7 +141,7 @@
 <body>
 
     <header>
-        <img src="Logo.gif60.jpg" alt="Fumichisa Corporativo" class="logo-nav">
+        <img src="logo_definitivo.png?v=2" alt="Fumichisa Corporativo" class="logo-nav">
         <div class="nav-text">Bioseguridad Estructural</div>
     </header>
 
