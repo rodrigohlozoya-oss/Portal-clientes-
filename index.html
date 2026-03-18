@@ -29,8 +29,12 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
         }
         
+        /* LOGO AMPLIADO A 120PX */
         .logo-nav { 
-            max-height: 80px; width: auto; display: block; transition: all 0.4s ease;
+            max-height: 120px; 
+            width: auto; 
+            display: block; 
+            transition: all 0.4s ease;
         }
         .logo-nav:hover { transform: scale(1.02); }
         
@@ -109,7 +113,7 @@
         .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--negro); letter-spacing: 0.5px; }
         .service-card p { font-size: 0.95rem; color: var(--texto); line-height: 1.7; font-weight: 400; }
 
-        /* FOOTER OSCURO (Para dar un cierre sólido a la página) */
+        /* FOOTER OSCURO */
         footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 50px 20px; font-size: 0.9rem; font-weight: 300; position: relative; }
         footer p { margin-bottom: 10px; letter-spacing: 0.5px; }
         footer strong { color: var(--blanco); font-weight: 500; }
@@ -118,7 +122,7 @@
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
             .hero { padding: 200px 5% 100px 5%; }
-            .logo-nav { max-height: 70px; }
+            .logo-nav { max-height: 90px; } /* En celulares se hace un poco más chico para no tapar todo */
             .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
             .stat-box { border-right: none; border-bottom: 1px solid #edf2f7; padding: 30px 20px; }
             .about-section { flex-direction: column; padding: 80px 5%; }
@@ -130,7 +134,7 @@
 <body>
 
     <header>
-        <img src="logo_hormiga.png?v=7" alt="Fumichisa Corporativo" class="logo-nav">
+        <img src="logo_hormiga.png?v=8" alt="Fumichisa Corporativo" class="logo-nav">
         <div class="nav-text">Bioseguridad Estructural</div>
     </header>
 
