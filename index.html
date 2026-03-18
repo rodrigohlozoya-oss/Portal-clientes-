@@ -21,49 +21,45 @@
         body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
 
+        /* ENCABEZADO BLANCO CORPORATIVO */
         header { 
             position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; 
-            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; 
-            background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            background-color: var(--blanco);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Sombra suave para separarlo del fondo */
         }
         
-        /* Estilo Cohesivo para el Logo en Placa Blanca */
+        /* Logo limpio sin placas extra */
         .logo-nav { 
-            max-height: 85px; 
+            max-height: 80px; 
             width: auto; 
             display: block; 
-            padding: 8px 18px; /* Márgenes suaves y equilibrados */
-            background-color: rgba(255, 255, 255, 0.95); /* Placa blanca premium para resaltar texto negro */
-            border-radius: 6px; /* Bordes sutiles */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
             transition: all 0.4s ease;
         }
         
         .logo-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(42, 140, 63, 0.4);
+            transform: scale(1.02);
         }
         
         .nav-text { 
-            color: var(--blanco); 
-            font-size: 13px; 
-            font-weight: 700; 
+            color: var(--negro); /* Texto oscuro para el fondo blanco */
+            font-size: 14px; 
+            font-weight: 900; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
-            opacity: 0.8; 
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            border-left: 2px solid var(--verde);
+            border-left: 3px solid var(--verde);
             padding-left: 15px;
         }
 
+        /* Ajuste para que el contenido principal no quede tapado por la barra blanca */
         .hero { 
             position: relative; min-height: 100vh; color: var(--blanco);
-            background-color: var(--negro); display: flex; align-items: center; padding: 160px 5% 80px 5%;
+            background-color: var(--negro); display: flex; align-items: center; padding: 180px 5% 80px 5%;
         }
         
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0.4) 100%), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(135deg, rgba(17,17,17,0.92) 0%, rgba(17,17,17,0.6) 100%), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; background-attachment: fixed;
             z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
         }
@@ -129,8 +125,8 @@
 
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
-            .hero { padding: 180px 5% 100px 5%; }
-            .logo-nav { max-height: 75px; }
+            .hero { padding: 200px 5% 100px 5%; }
+            .logo-nav { max-height: 70px; }
             .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
             .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 20px; }
             .about-section { flex-direction: column; padding: 80px 5%; }
@@ -142,7 +138,7 @@
 <body>
 
     <header>
-        <img src="logo_hormiga.png?v=5" alt="Fumichisa Corporativo" class="logo-nav">
+        <img src="logo_hormiga.png?v=6" alt="Fumichisa Corporativo" class="logo-nav">
         <div class="nav-text">Bioseguridad Estructural</div>
     </header>
 
@@ -166,3 +162,64 @@
         <div class="stat-box">
             <span class="stat-number">3</span>
             <span class="stat-text">Bases Operativas (QRO / CHIH / VALLE)</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-text">Garantía de Saneamiento y Erradicación</span>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Tecnología, Equipo y Autoridad</h2>
+            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Desarrollamos protocolos de extracción y blindaje basados en el comportamiento biológico de cada patógeno. Su seguridad sanitaria no es un gasto, es una inversión en continuidad operativa.</p>
+            <p>Nuestro personal cuenta con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tecnología Aplicada Fumichisa">
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="services-bg"></div>
+        <div class="section-header">
+            <h2>Protocolos de Alta Gama</h2>
+            <div class="line"></div>
+        </div>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <i class="fas fa-shield-virus service-icon"></i>
+                <h3>Cucaracha Alemana</h3>
+                <p>Uso exclusivo de geles atrayentes premium y Reguladores de Crecimiento (IGR) para esterilizar a la colonia y romper el ciclo biológico en áreas de proceso de alimentos.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-spider service-icon"></i>
+                <h3>Barrera Perimetral</h3>
+                <p>Barreras químicas residuales en exteriores e interiores para blindar naves industriales y residencias contra alacranes, viudas negras y ciempiés.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-bed service-icon"></i>
+                <h3>Extracción de Chinches</h3>
+                <p>Tratamiento de choque mecánico y químico diseñado para erradicar infestaciones severas, eliminando adultos, ninfas y huevecillos con garantía total.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-vector-square service-icon"></i>
+                <h3>Control de Roedores</h3>
+                <p>Instalación estratégica de estaciones de cebado perimetral con anclaje de seguridad, mapeo de actividad, y consultoría técnica en exclusión física de instalaciones.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>FUMICHISA CORPORATIVO</strong> | Bioseguridad e Higiene Estructural.</p>
+        <div class="location-list">Querétaro • Valle de Bravo • Chihuahua</div>
+        <p>© 2026 Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
