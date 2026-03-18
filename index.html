@@ -15,6 +15,7 @@
             --gris-fondo: #f8fafc;
             --texto: #4A5568;
             --blanco: #ffffff;
+            --whatsapp: #25D366; /* Verde oficial de WhatsApp */
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -106,7 +107,7 @@
         .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--negro); letter-spacing: 0.5px; }
         .service-card p { font-size: 0.95rem; color: var(--texto); line-height: 1.7; font-weight: 400; }
 
-        /* NUEVA SECCIÓN: CARRUSEL DE CLIENTES Y CERTIFICACIONES */
+        /* CARRUSEL DE CLIENTES Y CERTIFICACIONES */
         .clients-section { padding: 80px 5%; background-color: var(--blanco); text-align: center; border-top: 1px solid #edf2f7; }
         .clients-section h2 { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--negro); }
         
@@ -136,7 +137,6 @@
         }
         .slide-text i { font-size: 1.5rem; color: var(--verde); }
         
-        /* Animación del Carrusel */
         @keyframes scroll { 
             0% { transform: translateX(0); } 
             100% { transform: translateX(calc(-250px * 5)); } 
@@ -148,6 +148,32 @@
         footer strong { color: var(--blanco); font-weight: 500; }
         footer .location-list { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 15px; }
 
+        /* ESTILO PARA EL BOTÓN FLOTANTE DE WHATSAPP */
+        .btn-whatsapp-flotante {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp);
+            color: #FFF;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp-flotante:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+            color: #FFF;
+            box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.4);
+        }
+
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
             .hero { padding: 200px 5% 100px 5%; }
@@ -157,6 +183,8 @@
             .about-section { flex-direction: column; padding: 80px 5%; }
             .about-text { padding-left: 0; }
             .about-image { margin-top: 30px; }
+            /* Ajuste del botón flotante para celulares */
+            .btn-whatsapp-flotante { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
         }
     </style>
 </head>
@@ -173,7 +201,7 @@
             <h1>Expertos en <span>Erradicación</span> y Blindaje Estructural</h1>
             <p>15 años liderando la industria del control sanitario. Protegemos operaciones comerciales, residenciales e industriales con química de última generación y personal altamente técnico.</p>
             
-            <a href="https://wa.me/526142126037?text=Hola,%20busco%20soluciones%20de%20erradicación%20profesional." class="btn-primary">
+            <a href="https://wa.me/526142126037?text=Hola,%20busco%20soluciones%20de%20erradicación%20profesional." class="btn-primary" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contacto Operativo Inmediato
             </a>
         </div>
@@ -247,14 +275,14 @@
                 <div class="slide"><div class="slide-text"><i class="fas fa-industry"></i> Industria</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-utensils"></i> Sector Alimenticio</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-hotel"></i> Hotelería</div></div>
-                <div class="slide"><div class="slide-text"><i class="fas fa-certificate"></i> Distintivo H</div></div>
-                <div class="slide"><div class="slide-text"><i class="fas fa-shield-alt"></i> Cumplimiento Normativo</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-file-medical-alt"></i> Licencia Sanitaria</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-leaf"></i> Sistema MIP</div></div>
                 
                 <div class="slide"><div class="slide-text"><i class="fas fa-industry"></i> Industria</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-utensils"></i> Sector Alimenticio</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-hotel"></i> Hotelería</div></div>
-                <div class="slide"><div class="slide-text"><i class="fas fa-certificate"></i> Distintivo H</div></div>
-                <div class="slide"><div class="slide-text"><i class="fas fa-shield-alt"></i> Cumplimiento Normativo</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-file-medical-alt"></i> Licencia Sanitaria</div></div>
+                <div class="slide"><div class="slide-text"><i class="fas fa-leaf"></i> Sistema MIP</div></div>
             </div>
         </div>
     </section>
@@ -264,6 +292,10 @@
         <div class="location-list">Querétaro • Valle de Bravo • Chihuahua</div>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
+    <a href="https://wa.me/526142126037?text=Hola,%20busco%20soluciones%20de%20erradicación%20profesional." class="btn-whatsapp-flotante" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
