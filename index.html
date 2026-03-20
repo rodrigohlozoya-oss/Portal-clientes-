@@ -15,175 +15,133 @@
             --gris-fondo: #f8fafc;
             --texto: #4A5568;
             --blanco: #ffffff;
-            --whatsapp: #25D366; /* Verde oficial de WhatsApp */
+            --whatsapp: #25D366;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
+        body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
 
-        /* ENCABEZADO BLANCO */
+        /* ENCABEZADO */
         header { 
             position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; 
             padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
             background-color: var(--blanco);
             box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
         }
-        
         .logo-nav { max-height: 120px; width: auto; display: block; transition: all 0.4s ease; }
         .logo-nav:hover { transform: scale(1.02); }
-        
         .nav-text { 
             color: var(--negro); font-size: 14px; font-weight: 900; text-transform: uppercase; 
             letter-spacing: 2px; border-left: 3px solid var(--verde); padding-left: 15px;
         }
 
-        /* SECCIÓN PRINCIPAL CLARA (HERO) */
+        /* HERO */
         .hero { 
             position: relative; min-height: 100vh; color: var(--negro);
             background-color: var(--blanco); display: flex; align-items: center; padding: 180px 5% 80px 5%;
         }
-        
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; background-attachment: fixed;
             z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
         }
-        
         .hero-content { position: relative; z-index: 2; max-width: 850px; }
-        
-        .hero h1 { 
-            color: var(--negro); font-size: 4rem; font-weight: 900; line-height: 1.1; 
-            margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1.5px; 
-        }
+        .hero h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1.5px; }
         .hero h1 span { color: var(--verde); }
-        .hero p { font-size: 1.25rem; color: var(--texto); margin-bottom: 45px; line-height: 1.6; font-weight: 400; }
+        .hero p { font-size: 1.25rem; margin-bottom: 45px; font-weight: 400; }
         
         .btn-primary {
             display: inline-flex; align-items: center; justify-content: center;
             background-color: var(--verde); color: var(--blanco); padding: 22px 45px; 
             font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; 
             text-transform: uppercase; text-decoration: none; letter-spacing: 1.5px;
-            border-radius: 4px; transition: all 0.3s ease; 
-            box-shadow: 0 10px 30px rgba(42, 140, 63, 0.2);
+            border-radius: 4px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(42, 140, 63, 0.2);
         }
         .btn-primary i { margin-right: 15px; font-size: 1.2rem; }
         .btn-primary:hover { background-color: var(--negro); color: var(--blanco); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
 
-        /* BARRA DE ESTADÍSTICAS CLARA */
+        /* ESTADÍSTICAS */
         .stats-bar { 
-            background-color: var(--blanco); color: var(--negro); display: flex; flex-wrap: wrap; 
-            margin-top: -70px; position: relative; z-index: 5;
-            max-width: 1200px; margin-left: auto; margin-right: auto;
-            border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden;
-            border: 1px solid #edf2f7;
+            background-color: var(--blanco); display: flex; flex-wrap: wrap; 
+            margin-top: -70px; position: relative; z-index: 5; max-width: 1200px; margin-left: auto; margin-right: auto;
+            border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #edf2f7;
         }
         .stat-box { flex: 1; min-width: 250px; padding: 50px 20px; text-align: center; border-right: 1px solid #edf2f7; }
         .stat-box:last-child { border-right: none; }
         .stat-number { display: block; font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--verde); margin-bottom: 10px; }
         .stat-text { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #718096; font-weight: 700; }
 
-        /* SECCIÓN NOSOTROS */
-        .about-section { padding: 140px 5% 100px 5%; background-color: var(--blanco); display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
+        /* NOSOTROS */
+        .about-section { padding: 140px 5% 100px 5%; display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
         .about-text { flex: 1; min-width: 350px; }
         .about-text h2 { font-size: 2.8rem; margin-bottom: 30px; text-transform: uppercase; }
         .about-text h2::after { content: ''; display: block; width: 70px; height: 5px; background-color: var(--verde); margin-top: 20px; }
-        .about-text p { margin-bottom: 25px; font-size: 1.15rem; line-height: 1.9; color: var(--texto); }
-        
+        .about-text p { margin-bottom: 25px; font-size: 1.15rem; }
         .about-image { flex: 1; min-width: 350px; position: relative; }
         .about-image img { width: 100%; height: auto; display: block; position: relative; z-index: 2; clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        /* SECCIÓN SERVICIOS */
-        .services { padding: 120px 5%; background-color: var(--gris-fondo); position: relative; }
-        .section-header { text-align: center; margin-bottom: 90px; }
-        .section-header h2 { font-size: 3rem; text-transform: uppercase; margin-bottom: 20px; }
+        /* SERVICIOS */
+        .services { padding: 120px 5%; background-color: var(--gris-fondo); }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 20px; }
         .section-header .line { width: 100px; height: 5px; background-color: var(--verde); margin: 0 auto; }
-        
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1240px; margin: 0 auto; }
-        .service-card { background: var(--blanco); padding: 60px 40px; border-radius: 8px; transition: all 0.4s ease; border: 1px solid #edf2f7; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1240px; margin: 0 auto; }
+        .service-card { background: var(--blanco); padding: 50px 30px; border-radius: 8px; transition: all 0.4s ease; border: 1px solid #edf2f7; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--verde); }
-        .service-icon { font-size: 2.5rem; color: var(--verde); margin-bottom: 25px; }
-        .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--negro); letter-spacing: 0.5px; }
-        .service-card p { font-size: 0.95rem; color: var(--texto); line-height: 1.7; font-weight: 400; }
+        .service-icon { font-size: 2.5rem; color: var(--verde); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* CARRUSEL DE CLIENTES Y CERTIFICACIONES */
-        .clients-section { padding: 80px 5%; background-color: var(--blanco); text-align: center; border-top: 1px solid #edf2f7; }
-        .clients-section h2 { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--negro); }
-        
-        .slider { 
-            background: white; box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05); height: 100px; 
-            margin: auto; overflow: hidden; position: relative; width: 100%; max-width: 1200px; border-radius: 8px;
-        }
-        .slider::before, .slider::after { 
-            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); 
-            content: ""; height: 100px; position: absolute; width: 100px; z-index: 2; 
-        }
-        .slider::after { right: 0; top: 0; transform: rotateZ(180deg); }
-        .slider::before { left: 0; top: 0; }
-        
-        .slide-track { 
-            animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); 
-        }
-        .slide { 
-            height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; 
-            padding: 20px; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; 
-        }
+        /* NUEVO: EL MÉTODO FUMICHISA */
+        .method-section { padding: 100px 5%; background-color: var(--blanco); }
+        .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1240px; margin: 0 auto; text-align: center; }
+        .method-step { position: relative; padding: 20px; }
+        .step-number { font-size: 4rem; font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--gris-fondo); position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 0; }
+        .method-step h4 { position: relative; z-index: 1; font-size: 1.1rem; margin: 20px 0 10px 0; color: var(--verde); text-transform: uppercase; }
+        .method-step p { position: relative; z-index: 1; font-size: 0.95rem; }
+
+        /* NUEVO: SEGURIDAD Y COBERTURA (BLOQUE DUAL) */
+        .trust-section { display: flex; flex-wrap: wrap; background-color: var(--negro); color: var(--blanco); }
+        .trust-box { flex: 1; min-width: 350px; padding: 80px 8%; }
+        .trust-box.safety { background-color: var(--verde); }
+        .trust-box h3 { color: var(--blanco); font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; }
+        .trust-box p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 20px; }
+        .trust-box ul { list-style: none; margin-top: 20px; }
+        .trust-box ul li { margin-bottom: 15px; display: flex; align-items: center; font-size: 0.95rem; }
+        .trust-box ul li i { margin-right: 15px; font-size: 1.2rem; opacity: 0.8; }
+
+        /* CARRUSEL DE CLIENTES */
+        .clients-section { padding: 60px 5%; background-color: var(--blanco); text-align: center; border-bottom: 1px solid #edf2f7; }
+        .slider { background: white; height: 80px; margin: auto; overflow: hidden; position: relative; width: 100%; max-width: 1200px; }
+        .slide-track { animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); }
+        .slide { height: 80px; width: 250px; display: flex; align-items: center; justify-content: center; padding: 20px; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
         .slide:hover { filter: grayscale(0%); opacity: 1; color: var(--verde); }
-        
-        .slide-text { 
-            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; 
-            text-transform: uppercase; display: flex; align-items: center; gap: 10px;
-        }
-        .slide-text i { font-size: 1.5rem; color: var(--verde); }
-        
-        @keyframes scroll { 
-            0% { transform: translateX(0); } 
-            100% { transform: translateX(calc(-250px * 5)); } 
-        }
+        .slide-text { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+        .slide-text i { font-size: 1.3rem; color: var(--verde); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
 
-        /* FOOTER OSCURO */
-        footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 50px 20px; font-size: 0.9rem; font-weight: 300; position: relative; }
-        footer p { margin-bottom: 10px; letter-spacing: 0.5px; }
+        /* FOOTER */
+        footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 40px 20px; font-size: 0.9rem; }
         footer strong { color: var(--blanco); font-weight: 500; }
-        footer .location-list { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 15px; }
 
-        /* ESTILO PARA EL BOTÓN FLOTANTE DE WHATSAPP */
+        /* WHATSAPP FLOTANTE */
         .btn-whatsapp-flotante {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--whatsapp);
-            color: #FFF;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: var(--whatsapp); color: #FFF; border-radius: 50px;
+            display: flex; align-items: center; justify-content: center; font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; transition: all 0.3s ease;
         }
-        .btn-whatsapp-flotante:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
-            color: #FFF;
-            box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.4);
-        }
+        .btn-whatsapp-flotante:hover { transform: scale(1.1); background-color: #128C7E; box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.4); }
 
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 2.5rem; }
             .hero { padding: 200px 5% 100px 5%; }
             .logo-nav { max-height: 90px; } 
             .stats-bar { grid-template-columns: 1fr; margin-top: -30px; }
-            .stat-box { border-right: none; border-bottom: 1px solid #edf2f7; padding: 30px 20px; }
-            .about-section { flex-direction: column; padding: 80px 5%; }
-            .about-text { padding-left: 0; }
-            .about-image { margin-top: 30px; }
-            /* Ajuste del botón flotante para celulares */
+            .stat-box { border-bottom: 1px solid #edf2f7; border-right: none; }
+            .about-section, .trust-section { flex-direction: column; padding: 80px 5%; }
+            .trust-box { padding: 60px 5%; }
             .btn-whatsapp-flotante { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
         }
     </style>
@@ -200,7 +158,6 @@
         <div class="hero-content">
             <h1>Expertos en <span>Erradicación</span> y Blindaje Estructural</h1>
             <p>15 años liderando la industria del control sanitario. Protegemos operaciones comerciales, residenciales e industriales con química de última generación y personal altamente técnico.</p>
-            
             <a href="https://wa.me/526142126037?text=Hola,%20busco%20soluciones%20de%20erradicación%20profesional." class="btn-primary" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contacto Operativo Inmediato
             </a>
@@ -208,25 +165,16 @@
     </section>
 
     <section class="stats-bar">
-        <div class="stat-box">
-            <span class="stat-number">15</span>
-            <span class="stat-text">Años de Autoridad en la Industria</span>
-        </div>
-        <div class="stat-box">
-            <span class="stat-number">3</span>
-            <span class="stat-text">Bases Operativas (QRO / CHIH / VALLE)</span>
-        </div>
-        <div class="stat-box">
-            <span class="stat-number">100%</span>
-            <span class="stat-text">Garantía de Saneamiento y Erradicación</span>
-        </div>
+        <div class="stat-box"><span class="stat-number">15</span><span class="stat-text">Años de Autoridad</span></div>
+        <div class="stat-box"><span class="stat-number">3</span><span class="stat-text">Bases Operativas</span></div>
+        <div class="stat-box"><span class="stat-number">100%</span><span class="stat-text">Garantía de Erradicación</span></div>
     </section>
 
     <section class="about-section">
         <div class="about-text">
             <h2>Tecnología, Equipo y Autoridad</h2>
-            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Desarrollamos protocolos de extracción y blindaje basados en el comportamiento biológico de cada patógeno. Su seguridad sanitaria no es un gasto, es una inversión en continuidad operativa.</p>
-            <p>Nuestro personal cuenta con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura.</p>
+            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Desarrollamos protocolos de extracción y blindaje basados en el comportamiento biológico de cada patógeno.</p>
+            <p>Contamos con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura.</p>
         </div>
         <div class="about-image">
             <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tecnología Aplicada Fumichisa">
@@ -234,42 +182,69 @@
     </section>
 
     <section class="services">
-        <div class="services-bg"></div>
         <div class="section-header">
             <h2>Protocolos de Alta Gama</h2>
             <div class="line"></div>
         </div>
         <div class="services-grid">
-            
-            <div class="service-card">
-                <i class="fas fa-shield-virus service-icon"></i>
-                <h3>Cucaracha Alemana</h3>
-                <p>Uso exclusivo de geles atrayentes premium y Reguladores de Crecimiento (IGR) para esterilizar a la colonia y romper el ciclo biológico en áreas de proceso de alimentos.</p>
+            <div class="service-card"><i class="fas fa-shield-virus service-icon"></i><h3>Cucaracha Alemana</h3><p>Uso de geles atrayentes premium y reguladores de crecimiento para romper el ciclo biológico.</p></div>
+            <div class="service-card"><i class="fas fa-spider service-icon"></i><h3>Barrera Perimetral</h3><p>Protección química residual contra alacranes, viudas negras y ciempiés.</p></div>
+            <div class="service-card"><i class="fas fa-bed service-icon"></i><h3>Extracción de Chinches</h3><p>Tratamiento de choque diseñado para erradicar infestaciones severas con garantía total.</p></div>
+            <div class="service-card"><i class="fas fa-vector-square service-icon"></i><h3>Control de Roedores</h3><p>Instalación de estaciones de cebado y consultoría técnica en exclusión física.</p></div>
+        </div>
+    </section>
+
+    <section class="method-section">
+        <div class="section-header">
+            <h2>El Método Fumichisa</h2>
+            <div class="line"></div>
+        </div>
+        <div class="method-grid">
+            <div class="method-step">
+                <div class="step-number">01</div>
+                <h4>Inspección Técnica</h4>
+                <p>Evaluamos el nivel de infestación y vulnerabilidades estructurales.</p>
             </div>
-            
-            <div class="service-card">
-                <i class="fas fa-spider service-icon"></i>
-                <h3>Barrera Perimetral</h3>
-                <p>Barreras químicas residuales en exteriores e interiores para blindar naves industriales y residencias contra alacranes, viudas negras y ciempiés.</p>
+            <div class="method-step">
+                <div class="step-number">02</div>
+                <h4>Diseño del Protocolo</h4>
+                <p>Seleccionamos la química exacta basada en el comportamiento del patógeno.</p>
             </div>
-            
-            <div class="service-card">
-                <i class="fas fa-bed service-icon"></i>
-                <h3>Extracción de Chinches</h3>
-                <p>Tratamiento de choque mecánico y químico diseñado para erradicar infestaciones severas, eliminando adultos, ninfas y huevecillos con garantía total.</p>
+            <div class="method-step">
+                <div class="step-number">03</div>
+                <h4>Erradicación (Choque)</h4>
+                <p>Intervención directa para abatir a la población adulta y romper el ciclo.</p>
             </div>
-            
-            <div class="service-card">
-                <i class="fas fa-vector-square service-icon"></i>
-                <h3>Control de Roedores</h3>
-                <p>Instalación estratégica de estaciones de cebado perimetral con anclaje de seguridad, mapeo de actividad, y consultoría técnica en exclusión física de instalaciones.</p>
+            <div class="method-step">
+                <div class="step-number">04</div>
+                <h4>Monitoreo y Blindaje</h4>
+                <p>Establecimiento de barreras preventivas para evitar reincidencias.</p>
             </div>
-            
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <div class="trust-box safety">
+            <h3>Entornos Seguros</h3>
+            <p>Sabemos que la seguridad de los más pequeños de la casa es la prioridad. Nuestro enfoque residencial utiliza productos de banda verde, diseñados específicamente para lograr máxima eficacia contra la plaga con mínima toxicidad para mamíferos.</p>
+            <ul>
+                <li><i class="fas fa-baby"></i> Protocolos de reentrada seguros para niños.</li>
+                <li><i class="fas fa-paw"></i> Aplicaciones amigables y seguras para mascotas.</li>
+                <li><i class="fas fa-leaf"></i> Químicos inodoros y sin manchas.</li>
+            </ul>
+        </div>
+        <div class="trust-box">
+            <h3>Zonas de Cobertura Operativa</h3>
+            <p>Desplegamos unidades de atención rápida e industrial en zonas estratégicas, garantizando tiempos de respuesta óptimos para emergencias sanitarias.</p>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Querétaro:</strong> Cobertura total incluyendo zona metropolitana, Juriquilla, Campanario y Zibatá.</li>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Chihuahua:</strong> Servicio industrial y residencial integral.</li>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Valle de Bravo:</strong> Protección especializada para residencias de descanso.</li>
+            </ul>
         </div>
     </section>
 
     <section class="clients-section">
-        <h2>Sectores Atendidos y Certificaciones</h2>
         <div class="slider">
             <div class="slide-track">
                 <div class="slide"><div class="slide-text"><i class="fas fa-industry"></i> Industria</div></div>
@@ -277,7 +252,6 @@
                 <div class="slide"><div class="slide-text"><i class="fas fa-hotel"></i> Hotelería</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-file-medical-alt"></i> Licencia Sanitaria</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-leaf"></i> Sistema MIP</div></div>
-                
                 <div class="slide"><div class="slide-text"><i class="fas fa-industry"></i> Industria</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-utensils"></i> Sector Alimenticio</div></div>
                 <div class="slide"><div class="slide-text"><i class="fas fa-hotel"></i> Hotelería</div></div>
@@ -289,7 +263,6 @@
 
     <footer>
         <p><strong>FUMICHISA CORPORATIVO</strong> | Bioseguridad e Higiene Estructural.</p>
-        <div class="location-list">Querétaro • Valle de Bravo • Chihuahua</div>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
 
