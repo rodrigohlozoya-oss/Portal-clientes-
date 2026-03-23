@@ -11,18 +11,13 @@
 body { font-family: 'Roboto', sans-serif; color: var(--texto); background-color: var(--blanco); overflow-x: hidden; font-weight: 300; line-height: 1.6; }
 h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--negro); font-weight: 700; }
 
+/* ENCABEZADO */
 header { 
     position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; 
     padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
     background-color: var(--blanco); box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
 }
 .brand { display: flex; align-items: center; gap: 15px; text-decoration: none;}
-.logo-nav { max-height: 80px; width: auto; display: block; transition: all 0.4s ease; }
-.logo-nav:hover { transform: scale(1.02); }
-.nav-text { 
-    color: var(--negro); font-size: 14px; font-weight: 900; text-transform: uppercase; 
-    letter-spacing: 2px; border-left: 3px solid var(--verde); padding-left: 15px;
-}
 .nav-links { display: flex; gap: 30px; }
 .nav-links a { 
     text-decoration: none; color: var(--texto); font-weight: 700; 
@@ -31,20 +26,26 @@ header {
 }
 .nav-links a:hover, .nav-links a.active { color: var(--verde); }
 
+/* HERO (PORTADA CON VIDEO DE FONDO) */
 .hero { 
-    position: relative; min-height: 100vh; color: var(--negro);
-    background-color: var(--blanco); display: flex; align-items: center; padding: 180px 5% 80px 5%;
+    position: relative; min-height: 100vh; color: var(--blanco);
+    display: flex; align-items: center; padding: 180px 5% 80px 5%;
+    overflow: hidden; background-color: var(--negro);
 }
-.hero-bg {
+.video-bg {
+    position: absolute; top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%; width: auto; height: auto;
+    transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover;
+}
+.hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover; background-position: center; background-attachment: fixed;
+    background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(42,140,63,0.4) 100%);
     z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
 }
 .hero-content { position: relative; z-index: 2; max-width: 850px; }
-.hero h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1.5px; }
-.hero h1 span { color: var(--verde); }
-.hero p { font-size: 1.25rem; margin-bottom: 45px; font-weight: 400; }
+.hero h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -1.5px; color: var(--blanco); }
+.hero h1 span { color: var(--verde); text-shadow: 0 0 10px rgba(0,0,0,0.8); }
+.hero p { font-size: 1.25rem; margin-bottom: 45px; font-weight: 400; color: #f1f5f9; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
 
 .btn-primary {
     display: inline-flex; align-items: center; justify-content: center;
@@ -54,8 +55,9 @@ header {
     border-radius: 4px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(42, 140, 63, 0.2);
 }
 .btn-primary i { margin-right: 15px; font-size: 1.2rem; }
-.btn-primary:hover { background-color: var(--negro); color: var(--blanco); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+.btn-primary:hover { background-color: var(--blanco); color: var(--negro); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
 
+/* ESTADÍSTICAS */
 .stats-bar { 
     background-color: var(--blanco); display: flex; flex-wrap: wrap; 
     margin-top: -70px; position: relative; z-index: 5; max-width: 1200px; margin-left: auto; margin-right: auto;
@@ -66,6 +68,7 @@ header {
 .stat-number { display: block; font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--verde); margin-bottom: 10px; }
 .stat-text { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #718096; font-weight: 700; }
 
+/* SECCIONES INTERNAS */
 .page-header { padding: 180px 5% 80px 5%; background-color: var(--gris-fondo); text-align: center; border-bottom: 1px solid #edf2f7; }
 .page-header h1 { font-size: 3.5rem; text-transform: uppercase; color: var(--negro); margin-bottom: 15px; }
 .page-header p { font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto; }
