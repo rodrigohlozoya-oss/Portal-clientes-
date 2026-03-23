@@ -121,14 +121,27 @@
         .slide-text i { font-size: 1.3rem; color: var(--verde); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
 
-        /* SECCIÓN CONTACTO FINAL (NUEVA) */
-        .contact-final { padding: 100px 5%; background-color: var(--gris-fondo); text-align: center; }
-        .contact-final h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 15px; }
-        .contact-final p { font-size: 1.15rem; margin-bottom: 40px; color: #64748b; }
-        .contact-email { 
-            display: inline-block; font-size: 1.4rem; font-weight: 700; color: var(--verde); 
-            border: 2px dashed var(--verde); padding: 15px 40px; border-radius: 8px; margin-bottom: 40px;
-            background-color: var(--blanco); font-family: 'Montserrat', sans-serif; letter-spacing: 1px;
+        /* SECCIÓN CONTACTO REFINADA */
+        .contact-final { padding: 100px 5%; background-color: var(--blanco); text-align: center; border-top: 1px solid #edf2f7; }
+        .contact-wrapper { 
+            max-width: 800px; margin: 0 auto; padding: 60px 40px; 
+            background-color: var(--gris-fondo); border-radius: 12px; 
+            border: 1px solid #edf2f7; box-shadow: 0 10px 40px rgba(0,0,0,0.03); 
+        }
+        .contact-final h2 { font-size: 2.2rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .contact-final p { font-size: 1.1rem; margin-bottom: 40px; color: #64748b; font-weight: 400; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .contact-email-link {
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.15rem; font-weight: 500; color: var(--negro);
+            text-decoration: none; padding: 18px 45px; border-radius: 50px;
+            background-color: var(--blanco); border: 1px solid #e2e8f0;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px;
+        }
+        .contact-email-link i { color: var(--verde); margin-right: 15px; font-size: 1.3rem; }
+        .contact-email-link:hover { 
+            border-color: var(--verde); color: var(--verde);
+            box-shadow: 0 10px 25px rgba(42, 140, 63, 0.1); transform: translateY(-3px); 
         }
 
         /* FOOTER */
@@ -153,6 +166,8 @@
             .about-section, .trust-section { flex-direction: column; padding: 80px 5%; }
             .trust-box { padding: 60px 5%; }
             .btn-whatsapp-flotante { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
+            .contact-wrapper { padding: 40px 20px; }
+            .contact-email-link { font-size: 1rem; padding: 15px 30px; }
         }
     </style>
 </head>
@@ -283,16 +298,14 @@
     </section>
 
     <section class="contact-final" id="contacto">
-        <h2>Estamos listos para proteger tu espacio</h2>
-        <p>Un problema de plagas no espera. Contáctanos hoy mismo para programar una inspección detallada o solicitar una cotización a la medida.</p>
-        
-        <div class="contact-email">
-            <i class="fas fa-envelope"></i> administracion@fumichisa.com
+        <div class="contact-wrapper">
+            <h2>Atención Inmediata</h2>
+            <p>Nuestro equipo técnico está listo para evaluar sus instalaciones y diseñar un protocolo de erradicación a la medida.</p>
+            
+            <a href="mailto:administracion@fumichisa.com" class="contact-email-link">
+                <i class="fas fa-envelope"></i> administracion@fumichisa.com
+            </a>
         </div>
-        <br>
-        <a href="mailto:administracion@fumichisa.com" class="btn-primary">
-            <i class="fas fa-paper-plane"></i> Enviar Correo de Cotización
-        </a>
     </section>
 
     <footer>
