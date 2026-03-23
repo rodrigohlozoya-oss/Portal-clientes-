@@ -93,7 +93,7 @@
         .service-icon { font-size: 2.5rem; color: var(--verde); margin-bottom: 20px; }
         .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* NUEVO: EL MÉTODO FUMICHISA */
+        /* EL MÉTODO FUMICHISA */
         .method-section { padding: 100px 5%; background-color: var(--blanco); }
         .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1240px; margin: 0 auto; text-align: center; }
         .method-step { position: relative; padding: 20px; }
@@ -101,7 +101,7 @@
         .method-step h4 { position: relative; z-index: 1; font-size: 1.1rem; margin: 20px 0 10px 0; color: var(--verde); text-transform: uppercase; }
         .method-step p { position: relative; z-index: 1; font-size: 0.95rem; }
 
-        /* NUEVO: SEGURIDAD Y COBERTURA (BLOQUE DUAL) */
+        /* SEGURIDAD Y COBERTURA (BLOQUE DUAL) */
         .trust-section { display: flex; flex-wrap: wrap; background-color: var(--negro); color: var(--blanco); }
         .trust-box { flex: 1; min-width: 350px; padding: 80px 8%; }
         .trust-box.safety { background-color: var(--verde); }
@@ -120,6 +120,16 @@
         .slide-text { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
         .slide-text i { font-size: 1.3rem; color: var(--verde); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
+
+        /* SECCIÓN CONTACTO FINAL (NUEVA) */
+        .contact-final { padding: 100px 5%; background-color: var(--gris-fondo); text-align: center; }
+        .contact-final h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 15px; }
+        .contact-final p { font-size: 1.15rem; margin-bottom: 40px; color: #64748b; }
+        .contact-email { 
+            display: inline-block; font-size: 1.4rem; font-weight: 700; color: var(--verde); 
+            border: 2px dashed var(--verde); padding: 15px 40px; border-radius: 8px; margin-bottom: 40px;
+            background-color: var(--blanco); font-family: 'Montserrat', sans-serif; letter-spacing: 1px;
+        }
 
         /* FOOTER */
         footer { background-color: var(--negro); color: rgba(255,255,255,0.7); text-align: center; padding: 40px 20px; font-size: 0.9rem; }
@@ -156,10 +166,10 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Expertos en <span>Erradicación</span> y Blindaje Estructural</h1>
-            <p>15 años liderando la industria del control sanitario. Protegemos operaciones comerciales, residenciales e industriales con química de última generación y personal altamente técnico.</p>
+            <h1>Entornos Seguros,<br><span>Negocios Protegidos</span></h1>
+            <p>Soluciones integrales y definitivas en control de plagas para la industria, comercio y el hogar. En Fumichisa no solo eliminamos problemas, prevenimos riesgos con química de última generación.</p>
             <a href="https://wa.me/526142126037?text=Hola,%20busco%20soluciones%20de%20erradicación%20profesional." class="btn-primary" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contacto Operativo Inmediato
+                <i class="fab fa-whatsapp"></i> Solicitar una Inspección
             </a>
         </div>
     </section>
@@ -172,9 +182,9 @@
 
     <section class="about-section">
         <div class="about-text">
-            <h2>Tecnología, Equipo y Autoridad</h2>
-            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Desarrollamos protocolos de extracción y blindaje basados en el comportamiento biológico de cada patógeno.</p>
-            <p>Contamos con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura.</p>
+            <h2>Tu Aliado Estratégico en Sanidad</h2>
+            <p>En <strong>Fumichisa</strong> no aplicamos químicos al azar. Entendemos que cada instalación es única, por lo que diseñamos protocolos a la medida que cumplen con los más altos estándares de calidad y seguridad.</p>
+            <p>Contamos con equipo de aspersión de grado industrial, generadores de niebla fría y polvos electroestáticos para penetrar en las áreas más inaccesibles de su infraestructura y romper el ciclo biológico de cualquier patógeno.</p>
         </div>
         <div class="about-image">
             <img src="https://images.unsplash.com/photo-1584036533827-45bce166ad94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tecnología Aplicada Fumichisa">
@@ -183,14 +193,25 @@
 
     <section class="services">
         <div class="section-header">
-            <h2>Protocolos de Alta Gama</h2>
+            <h2>Nuestros Servicios</h2>
             <div class="line"></div>
         </div>
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-shield-virus service-icon"></i><h3>Cucaracha Alemana</h3><p>Uso de geles atrayentes premium y reguladores de crecimiento para romper el ciclo biológico.</p></div>
-            <div class="service-card"><i class="fas fa-spider service-icon"></i><h3>Barrera Perimetral</h3><p>Protección química residual contra alacranes, viudas negras y ciempiés.</p></div>
-            <div class="service-card"><i class="fas fa-bed service-icon"></i><h3>Extracción de Chinches</h3><p>Tratamiento de choque diseñado para erradicar infestaciones severas con garantía total.</p></div>
-            <div class="service-card"><i class="fas fa-vector-square service-icon"></i><h3>Control de Roedores</h3><p>Instalación de estaciones de cebado y consultoría técnica en exclusión física.</p></div>
+            <div class="service-card">
+                <i class="fas fa-industry service-icon"></i>
+                <h3>Control Comercial e Industrial</h3>
+                <p>Protegemos la integridad de tu negocio y reputación. Diseñamos pólizas de servicio para restaurantes, bodegas, oficinas e industria. Cumplimos normativas vigentes para auditorías de sanidad.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-home service-icon"></i>
+                <h3>Protección Residencial</h3>
+                <p>Eliminamos de raíz infestaciones de insectos y roedores. Utilizamos productos de grado profesional, altamente efectivos pero 100% seguros para tu familia y mascotas.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shield-virus service-icon"></i>
+                <h3>Desinfección y Sanitización</h3>
+                <p>Complementamos el control de plagas con tratamientos de desinfección profunda, eliminando virus, bacterias y hongos para garantizar espacios biológicamente seguros.</p>
+            </div>
         </div>
     </section>
 
@@ -237,7 +258,7 @@
             <h3>Zonas de Cobertura Operativa</h3>
             <p>Desplegamos unidades de atención rápida e industrial en zonas estratégicas, garantizando tiempos de respuesta óptimos para emergencias sanitarias.</p>
             <ul>
-                <li><i class="fas fa-map-marker-alt"></i> <strong>Querétaro:</strong> Cobertura total incluyendo zona metropolitana, Juriquilla, Campanario y Zibatá.</li>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Querétaro:</strong> Cobertura total incluyendo zona metropolitana y Juriquilla.</li>
                 <li><i class="fas fa-map-marker-alt"></i> <strong>Chihuahua:</strong> Servicio industrial y residencial integral.</li>
                 <li><i class="fas fa-map-marker-alt"></i> <strong>Valle de Bravo:</strong> Protección especializada para residencias de descanso.</li>
             </ul>
@@ -259,6 +280,19 @@
                 <div class="slide"><div class="slide-text"><i class="fas fa-leaf"></i> Sistema MIP</div></div>
             </div>
         </div>
+    </section>
+
+    <section class="contact-final" id="contacto">
+        <h2>Estamos listos para proteger tu espacio</h2>
+        <p>Un problema de plagas no espera. Contáctanos hoy mismo para programar una inspección detallada o solicitar una cotización a la medida.</p>
+        
+        <div class="contact-email">
+            <i class="fas fa-envelope"></i> administracion@fumichisa.com
+        </div>
+        <br>
+        <a href="mailto:administracion@fumichisa.com" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Enviar Correo de Cotización
+        </a>
     </section>
 
     <footer>
