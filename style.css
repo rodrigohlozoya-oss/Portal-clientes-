@@ -118,3 +118,94 @@ footer strong { color: var(--blanco); font-weight: 500; }
     .about-section { flex-direction: column; }
     .btn-whatsapp-flotante { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
 }
+/* =========================================
+   PORTAL DE CERTIFICADOS (Buscador)
+   ========================================= */
+.portal-section { 
+    padding: 100px 5%; 
+    background-color: var(--blanco); 
+    text-align: center; 
+    min-height: 60vh; /* Para que la página no quede corta si hay poco contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portal-wrapper { 
+    width: 100%;
+    max-width: 650px; 
+    padding: 60px 50px; 
+    background-color: var(--blanco); 
+    border-radius: 12px; 
+    border: 1px solid #edf2f7; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06); 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalle verde en el borde superior de la tarjeta */
+.portal-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--verde);
+}
+
+.portal-icon { 
+    font-size: 3.5rem; 
+    color: var(--verde); 
+    margin-bottom: 25px; 
+}
+
+.portal-wrapper h2 { 
+    font-size: 2.2rem; 
+    text-transform: uppercase; 
+    margin-bottom: 15px; 
+    letter-spacing: -0.5px;
+}
+
+.portal-wrapper p { 
+    font-size: 1.1rem; 
+    margin-bottom: 35px; 
+    color: #64748b; 
+}
+
+.portal-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.portal-form input { 
+    padding: 20px 25px; 
+    font-size: 1.1rem; 
+    border: 2px solid #edf2f7; 
+    background-color: var(--gris-fondo);
+    border-radius: 6px; 
+    font-family: 'Roboto', sans-serif; 
+    transition: all 0.3s ease; 
+    outline: none; 
+    color: var(--negro);
+    text-align: center;
+}
+
+.portal-form input:focus { 
+    border-color: var(--verde); 
+    background-color: var(--blanco);
+    box-shadow: 0 0 0 4px rgba(42, 140, 63, 0.1); 
+}
+
+.portal-form .btn-primary { 
+    width: 100%; 
+    cursor: pointer; 
+    border: none; 
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .portal-wrapper { padding: 40px 25px; }
+    .portal-wrapper h2 { font-size: 1.8rem; }
+}
