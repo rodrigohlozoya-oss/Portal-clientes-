@@ -33,6 +33,62 @@
                 </div>
         </div>
     </section>
+<script>
+        document.getElementById('form-certificados').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var input = document.getElementById('input_busqueda').value;
+            var btn = document.getElementById('btn_buscar');
+            var resultado = document.getElementById('resultado-busqueda');
 
+            // Cambiamos el diseño del botón mientras busca
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Buscando...';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+
+            // 🔴 PEGA TU URL DE APPS SCRIPT AQUÍ ABAJO 🔴
+            var urlWebApp = https://script.google.com/macros/s/AKfycbwgrEm9C-vO8u4lWvo24X2rTLCBGt61jjhUL279JyOWlGVoQ0rZLqK3BQt2iOfyfIKp/exec;
+
+            var formData = new FormData();
+            formData.append('busqueda', input);
+
+            fetch(urlWebApp, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Regresamos el botón a la normalidad
+                btn.innerHTML = '<i class="fas fa-search"></i> Consultar Certificado';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+
+                if(data.success) {
+                    resultado.style.display = 'block';
+                    resultado.innerHTML = `
+                        <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 25px; border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: #166534; margin-bottom: 10px; font-size: 1.2rem;">¡Expediente Encontrado!</h3>
+                            <p style="color: #15803d; margin-bottom: 20px;">Hemos localizado tu historial de servicios MIP.</p>
+                            <a href="${data.url}" class="btn-primary" style="display: inline-flex; text-decoration: none;">
+                                <i class="fas fa-external-link-alt"></i> Acceder a mi Portal VIP
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    resultado.style.display = 'block';
+                    resultado.innerHTML = `
+                        <div style="background-color: #fef2f2; border: 1px solid #fecaca; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                            <p style="color: #991b1b; margin: 0; font-weight: 500;">No encontramos certificados para ese folio o cliente. Verifica tus datos e intenta de nuevo.</p>
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                btn.innerHTML = '<i class="fas fa-search"></i> Consultar Certificado';
+                btn.disabled = false;
+                resultado.style.display = 'block';
+                resultado.innerHTML = '<p style="color: #991b1b; margin-top: 20px;">Hubo un error de conexión con el servidor. Intenta de nuevo.</p>';
+            });
+        });
+    </script>
     </body>
 </html>
